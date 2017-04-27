@@ -25,16 +25,16 @@ namespace CheeseMVC.Migrations
 
                     b.Property<string>("Name");
 
-                    b.Property<int>("Type");
+                    b.Property<int>("Category");
 
-                    b.HasKey("ID");
+                    b.HasKey("CategoryID");
 
                     b.ToTable("Cheeses");
                 });
 
             modelBuilder.Entity("CheeseMVC.Models.CheeseCategory", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("CategoryID")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
