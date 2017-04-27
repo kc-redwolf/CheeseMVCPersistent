@@ -14,7 +14,7 @@ namespace CheeseMVC.Controllers
 
         public CheeseController(CheeseDbContext dbContext)
         {
-            context = dbContext;
+            this.context = dbContext;
         }
 
         // GET: /<controller>/
@@ -27,7 +27,7 @@ namespace CheeseMVC.Controllers
 
         public IActionResult Add()
         {
-            AddCheeseViewModel addCheeseViewModel = new AddCheeseViewModel();
+            AddCheeseViewModel addCheeseViewModel = new AddCheeseViewModel(context.Categories.ToList());
             return View(addCheeseViewModel);
         }
 

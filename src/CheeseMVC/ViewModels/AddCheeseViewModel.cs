@@ -21,19 +21,19 @@ namespace CheeseMVC.ViewModels
         [Display(Name = "Category")]
         public int CategoryID { get; set; }
 
-        public IList<SelectListItem> Categories { get; set; }
+        public List<SelectListItem> Categories { get; set; }
 
         public AddCheeseViewModel() { }
 
-        public AddCheeseViewModel(List<CheeseCategory> categories)
+        public AddCheeseViewModel(IEnumerable<CheeseCategory> categories)
         {
             Categories = new List<SelectListItem>();
 
-            foreach (var category in categories)
+            foreach (CheeseCategory category in categories)
             {
                 Categories.Add(new SelectListItem
                 {
-                    Value = category.ID.ToString(),
+                    Value = (category.ID.ToString()),
                     Text = category.Name
                 });
             }
