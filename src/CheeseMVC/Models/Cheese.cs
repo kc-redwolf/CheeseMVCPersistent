@@ -11,6 +11,6 @@ namespace CheeseMVC.Models
         public CheeseCategory Category { get; set; }
         public int CategoryId { get; set; }
 
-        public IList<CheeseMenu> CheeseMenus { get; set; } = new List<CheeseMenu>();
+        public IList<CheeseMenu> CheeseMenus { get; set; }
     }
 }
